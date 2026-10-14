@@ -1,0 +1,310 @@
+
+.player-page {
+  min-height: 100vh;
+  background: #101018;
+  color: white;
+  padding: 40px 32px 150px;
+}
+
+.player-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.player-back {
+  color: #a78bfa;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 45px;
+}
+
+.player-poster {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.player-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.player-header p {
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.player-header span {
+  color: #a78bfa;
+  font-size: 14px;
+}
+
+.player-summary {
+  max-width: 1000px;
+  margin-bottom: 80px;
+}
+
+.player-summary h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.player-summary p {
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+/* Fixed Audio Player */
+
+.player-audio {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #002b36;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+.player-audio-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.player-audio-info img {
+  width: 42px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.player-audio-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.player-audio-info strong {
+  font-size: 14px;
+}
+
+.player-audio-info span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.player-controls .player-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  color: #002b36;
+  font-size: 20px;
+}
+
+.player-play:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.player-progress {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.player-progress span {
+  font-size: 12px;
+  color: #ddd;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-progress input {
+  width: 100%;
+  accent-color: #a78bfa;
+  cursor: pointer;
+}
+
+.player-error {
+  color: #ffb4b4;
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .player-page {
+    padding: 24px 18px 220px;
+  }
+
+  .player-header h1 {
+    font-size: 26px;
+  }
+
+  .player-audio {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .player-audio-info {
+    flex: 1;
+  }
+
+  .player-controls {
+    justify-content: center;
+    flex: 1;
+  }
+
+  .player-progress {
+    flex-basis: 100%;
+  }
+}
+
+/* Mobile audio player improvements */
+
+@media (max-width: 600px) {
+  .player-page {
+    padding: 24px 14px 220px;
+  }
+
+  .player-header {
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .player-header h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .player-summary {
+    margin-bottom: 40px;
+  }
+
+  .player-summary p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* Fixed audio controls */
+  .player-audio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 12px;
+
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    z-index: 100;
+  }
+
+  /* Movie artwork and details */
+  .player-audio-info {
+    min-width: 0;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .player-audio-info img {
+    width: 36px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .player-audio-info div {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .player-audio-info strong,
+  .player-audio-info span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .player-audio-info strong {
+    font-size: 12px;
+  }
+
+  .player-audio-info span {
+    font-size: 11px;
+  }
+
+  /* Play, pause, and skip controls */
+  .player-controls {
+    display: flex;
+    flex: initial;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .player-controls button {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .player-controls .player-play {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    font-size: 17px;
+  }
+
+  /* Audio timeline */
+  .player-progress {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .player-progress input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .player-progress span {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .player-error {
+    grid-column: 1 / -1;
+  }
+}

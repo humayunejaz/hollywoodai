@@ -1,0 +1,166 @@
+
+/* Skeleton shimmer animation */
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #292936 25%,
+    #3d3d4d 50%,
+    #292936 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Movie Card Skeleton */
+
+.skeleton-movie-card {
+  flex: 0 0 190px;
+  min-width: 0;
+}
+
+.skeleton-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 10px;
+}
+
+.skeleton-line {
+  height: 13px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.skeleton-title-line {
+  width: 85%;
+  margin-top: 12px;
+}
+
+.skeleton-small-line {
+  width: 60%;
+  height: 10px;
+  margin-top: 9px;
+}
+
+.skeleton-heading {
+  width: 75%;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.skeleton-medium-line {
+  width: 65%;
+}
+
+.skeleton-short-line {
+  width: 40%;
+}
+
+.skeleton-button {
+  width: 240px;
+  max-width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+
+.skeleton-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+/* Movie Details Skeleton */
+
+.skeleton-movie-details {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 70px;
+}
+
+.skeleton-details-text {
+  min-width: 0;
+}
+
+.skeleton-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.skeleton-tag {
+  width: 80px;
+  height: 32px;
+  border-radius: 7px;
+}
+
+.skeleton-details-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+}
+
+/* Player Skeleton */
+
+.skeleton-player {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skeleton-player-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.skeleton-player-poster {
+  width: 100px;
+  height: 150px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.skeleton-player-heading {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .skeleton-movie-card {
+    flex-basis: 150px;
+  }
+
+  .skeleton-movie-details {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .skeleton-details-poster {
+    grid-row: 1;
+    max-width: 220px;
+  }
+
+  .skeleton-heading {
+    height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+  }
+}

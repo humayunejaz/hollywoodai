@@ -1,0 +1,319 @@
+
+/* ========================================
+   HOLLYWOODAI — SHARED APPLICATION LAYOUT
+======================================== */
+
+.app-shell {
+  min-height: 100vh;
+  background: #101018;
+}
+
+.app-shell-content {
+  margin-left: 240px;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  z-index: 500;
+}
+
+.app-sidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #171720;
+  border-right: 1px solid #30303a;
+  padding: 30px 16px 20px;
+  color: white;
+  overflow-y: auto;
+}
+
+/* Branding */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 8px 45px;
+}
+
+.sidebar-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6042d9;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+/* Navigation */
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.app-sidebar .sidebar-item {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #b4b4c4;
+  font-family: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.app-sidebar .sidebar-item:visited {
+  color: #b4b4c4;
+}
+
+.sidebar-item i {
+  width: 18px;
+  text-align: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.app-sidebar .sidebar-item:hover:not(:disabled) {
+  background: #29293a;
+  color: white;
+}
+
+.app-sidebar .sidebar-item.sidebar-active,
+.app-sidebar .sidebar-item.sidebar-active:visited,
+.app-sidebar .sidebar-item.sidebar-active:hover {
+  background: #6042d9;
+  color: white;
+  font-weight: 600;
+}
+
+.app-sidebar .sidebar-item.sidebar-disabled {
+  color: #656577;
+  cursor: not-allowed;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #343445;
+  padding-top: 15px;
+}
+
+.sidebar-auth {
+  color: #e0e0e8;
+}
+
+.sidebar-error {
+  color: #ffaaaa;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+/* ========================================
+   GLOBAL SEARCH HEADER
+======================================== */
+
+.app-shell .app-global-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  width: 100%;
+  height: 82px;
+  min-height: 82px;
+  max-height: 82px;
+
+  padding: 16px 32px;
+  margin: 0;
+
+  background: #101018;
+  border-bottom: 1px solid #292936;
+}
+
+.app-shell .app-global-header-inner {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.global-search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 650px;
+  height: 50px;
+  padding: 0 16px;
+  margin: 0;
+  background: #222230;
+  border: 1px solid #3b3b4a;
+  border-radius: 10px;
+}
+
+.global-search:focus-within {
+  border-color: #7857f0;
+}
+
+.global-search > i {
+  color: #aaa;
+}
+
+.global-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.global-search input::placeholder {
+  color: #9292a2;
+}
+
+.global-search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 7px;
+  background: #6042d9;
+  color: white;
+  cursor: pointer;
+}
+
+.global-search button:hover {
+  background: #7857f0;
+}
+
+/* Page content below the global header */
+
+.app-shell-content > main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ========================================
+   MOBILE SIDEBAR
+======================================== */
+
+.sidebar-mobile-toggle {
+  display: none;
+}
+
+.sidebar-mobile-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-shell-content {
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .sidebar-wrapper {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 1002;
+  }
+
+  .sidebar-wrapper--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-mobile-toggle {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 1003;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background: #6042d9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .sidebar-mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    z-index: 1001;
+  }
+
+  .app-shell .app-global-header {
+  height: 68px;
+  min-height: 68px;
+  max-height: 68px;
+  padding: 12px 16px 12px 68px;
+}
+  .global-search {
+    max-width: none;
+  }
+
+  .global-search input {
+    font-size: 14px;
+  }
+}
+/* Prevent landing/dashboard styles from affecting sidebar links */
+.app-sidebar .sidebar-navigation a.sidebar-item:not(.sidebar-active),
+.app-sidebar .sidebar-navigation a.sidebar-item:not(.sidebar-active):visited {
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #b4b4c4;
+}
+
+.app-sidebar .sidebar-navigation a.sidebar-item:not(.sidebar-active):hover {
+  background: #29293a;
+  color: white;
+}

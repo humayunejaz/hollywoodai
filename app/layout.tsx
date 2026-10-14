@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import AppShell from "../components/AppShell";
+import "../components/sidebar.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./landing.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { AuthModalProvider } from "../components/AuthModalProvider";
+import "../components/auth-modal.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +26,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+  <AuthModalProvider>
+    <AppShell>
+      {children}
+    </AppShell>
+  </AuthModalProvider>
+</body>
     </html>
   );
 }

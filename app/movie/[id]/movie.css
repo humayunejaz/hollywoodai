@@ -1,0 +1,154 @@
+
+.movie-page {
+  min-height: 100vh;
+  background: #101018;
+  color: #ffffff;
+  padding: 50px 40px;
+}
+
+.movie-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.movie-back {
+  display: inline-block;
+  color: #a78bfa;
+  text-decoration: none;
+  margin-bottom: 48px;
+  font-size: 15px;
+}
+
+.movie-back:hover {
+  text-decoration: underline;
+}
+
+.movie-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 70px;
+  align-items: start;
+}
+
+.movie-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.movie-director {
+  font-size: 18px;
+  color: #aaaaaa;
+  margin-bottom: 25px;
+}
+
+.movie-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 16px 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #dddddd;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.movie-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.movie-tag {
+  background: #292936;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.movie-premium {
+  display: table;
+  background: #6042d9;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.movie-summarise {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+  background: #6042d9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.movie-summarise:hover {
+  background: #4c2fb7;
+}
+
+.movie-summarise:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.movie-description h2 {
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.movie-description p {
+  color: #cccccc;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.movie-loading {
+  font-size: 20px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .movie-page {
+    padding: 30px 20px;
+  }
+
+  .movie-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .movie-poster {
+    grid-row: 1;
+    max-width: 220px;
+  }
+
+  .movie-title {
+    font-size: 30px;
+  }
+
+  .movie-back {
+    margin-bottom: 28px;
+  }
+}
