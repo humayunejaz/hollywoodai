@@ -235,10 +235,7 @@ async function handleSubscribe(planId: PlanId) {
           </p>
         )}
 
-        <p className="plans-payment-note">
-          Payments are not enabled yet. This is a
-          subscription page preview.
-        </p>
+       
 
         <section className="plans-faq">
           <h2>Frequently Asked Questions</h2>
