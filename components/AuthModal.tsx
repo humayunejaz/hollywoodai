@@ -211,27 +211,34 @@ export default function AuthModal({
     }
   }
 
-  async function handleGoogleLogin() {
-    if (loadingRef.current) return;
+  
+async function handleGoogleLogin() {
+  if (loadingRef.current) return;
+
+  loadingRef.current = true;
+
+  try {
+    const provider = new GoogleAuthProvider();
+
+    // Start the popup immediately from the button click.
+    const loginPromise = signInWithPopup(auth, provider);
 
     setError("");
     setSuccess("");
-    loadingRef.current = true;
     setLoading(true);
 
-    try {
-      const provider = new GoogleAuthProvider();
+    await loginPromise;
 
-      await signInWithPopup(auth, provider);
-
-      redirectToDashboard();
-    } catch (err: unknown) {
-      showAuthError(err);
-    } finally {
-      loadingRef.current = false;
-      setLoading(false);
-    }
+    redirectToDashboard();
+  } catch (err: unknown) {
+    console.error("Google login error:", err);
+    showAuthError(err);
+  } finally {
+    loadingRef.current = false;
+    setLoading(false);
   }
+}
+
 
   async function handleGuestLogin() {
     if (loadingRef.current) return;
