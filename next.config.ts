@@ -1,10 +1,12 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
+  serverExternalPackages: [
+    "firebase-admin",
+    "jose",
+    "jwks-rsa",
+  ],
 };
 
 export default nextConfig;
