@@ -66,11 +66,15 @@
 
 /* Fixed Audio Player */
 
+
+/* Fixed Audio Player */
+
 .player-audio {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 210px;
   right: 0;
+  width: auto;
   background: #002b36;
   padding: 14px 28px;
   display: flex;
@@ -79,6 +83,7 @@
   z-index: 100;
   flex-wrap: wrap;
 }
+
 
 .player-audio-info {
   display: flex;
@@ -174,10 +179,15 @@
     font-size: 26px;
   }
 
-  .player-audio {
-    gap: 12px;
-    padding: 12px;
-  }
+  
+.player-audio {
+  left: 0;
+  right: 0;
+  width: 100%;
+  gap: 12px;
+  padding: 12px;
+}
+
 
   .player-audio-info {
     flex: 1;
